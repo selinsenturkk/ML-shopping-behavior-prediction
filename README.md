@@ -95,6 +95,14 @@ Modelin doğru/yanlış tahminlerini gösteren hata matrisi:
 
 ![confusion matrix](/images/img7.png)
 
+Bu tablo bize modelin stratejisini net bir şekilde göstermektedir:
+
+1.  **Doğru Pozitifler (Sağ Alt Köşe):** Model, gerçekte abone olan kişilerin çok büyük bir kısmını doğru tespit etmiştir.
+2.  **Yanlış Negatifler (Sol Alt Köşe):** Modelin "Abone Değil" dediği ama aslında "Abone Olan" kişi sayısı çok düşüktür.
+    * **İş Dünyası Anlamı:** Şirketimiz, potansiyel sadık müşterilerini (aboneleri) gözden kaçırmıyor.
+3.  **Yanlış Pozitifler (Sağ Üst Köşe):** Model bazen abone olmayanları da abone gibi tahmin etmiştir (Precision düşüklüğünün sebebi).
+    * Pazarlama açısından bakıldığında bir aboneyi sistemden kaçırmaktansa, abone olmayana yanlışlıkla promosyon göndermek "tercih edilebilir" bir risktir. Modelimiz bu güvenli yolu seçmiştir.
+      
 ---
 
 ## 7. En Önemli Faktörler (Feature Importance)
@@ -112,10 +120,11 @@ Yaş, cinsiyet veya harcama miktarı gibi özelliklerin etkisi daha sınırlı k
 
 ---
 
-## 8. Genel Sonuç ve Çıkarımlar
+## 8. Sonuç:
 
-Bu proje, Veri Bilimi süreçlerinde **"Problemi Doğru Tanımlamanın"** ne kadar hayati olduğunu göstermiştir.
+Bu proje, Veri Bilimi süreçlerinde **"Problemi Doğru Tanımlamanın"** ne kadar hayati olduğunu göstermiştir. Negatif $R^2$ skorundan **%82 doğruluk** oranına geçiş, veri biliminde başarının veriye doğru soruyu sormaktan geçtiğini göstermektedir.
 
 1.  **Regresyon Deneyimi:** Veri setindeki özellikler, müşterinin **ne kadar harcayacağını** tahmin etmek için yeterli sinyali içermemektedir (Negatif $R^2$).
 2.  **Sınıflandırma Başarısı:** Aynı veri seti, müşterinin **abone olup olmayacağını** tahmin etmek için ise oldukça elverişlidir (%82 Başarı).
 3.  **İş Zekası:** Analizler sonucunda, müşteri sadakatini artırmanın yolunun "İndirim" ve "Promosyonlardan" geçtiği veriye dayalı olarak ispatlanmıştır.
+
