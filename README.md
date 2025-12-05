@@ -51,7 +51,7 @@ Her iki model de eğitildikten sonra elde edilen sonuçlar beklentinin altında 
 | Linear Regression | -0.028 | 23.98 |
 | Random Forest | -0.032 | 24.04 |
 
-![lineer Regresyon Grafigi](img2.png)  ![Random forest grafigi](img3.png)
+![lineer Regresyon Grafigi](/images/img2.png)  ![Random forest grafigi](img3.png)
 
 ### Neden Başarısız Oldu?
 Elde edilen **negatif R² skorları**, modellerin veri setindeki varyansı açıklayamadığını gösterdi. Yapılan analiz sonucunda şu gerçek ortaya çıktı:
@@ -83,7 +83,7 @@ Sınıflandırma modelleri, regresyonun aksine oldukça başarılı sonuçlar ve
 
 En iyi performansı gösteren **Random Forest** modelinin detaylı analiz tablosu aşağıdadır:
 
-![Sınıflandırma Raporu Tablosu](img5.png)
+![Sınıflandırma Raporu Tablosu](/images/img5.png)
 
 ### Tablo Yorumu:
 Tabloda dikkat çeken en önemli detay **Recall (Duyarlılık)** değeridir.
@@ -93,7 +93,7 @@ Tabloda dikkat çeken en önemli detay **Recall (Duyarlılık)** değeridir.
 
 Modelin doğru/yanlış tahminlerini gösteren hata matrisi:
 
-![confusion matrix](img7.png)
+![confusion matrix](/images/img7.png)
 
 ---
 
@@ -101,7 +101,7 @@ Modelin doğru/yanlış tahminlerini gösteren hata matrisi:
 
 Modelin başarısının arkasında hangi özelliklerin yattığını anlamak için **Feature Importance** (Öznitelik Önemi) analizi yaptım.
 
-![Feature Importance Grafiği](img10.png)
+![Feature Importance Grafiği](/images/img10.png)
 
 ### Analiz Sonucu:
 Grafikte görüldüğü üzere, bir müşterinin abone olup olmadığını belirleyen en kritik iki faktör:
