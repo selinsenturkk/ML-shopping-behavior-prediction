@@ -34,7 +34,7 @@ Modelin daha doğru çalışabilmesi için veriyi şu adımlarla hazırladım:
 * **Veri Ayırma (Train-Test Split):** Veriyi %80 eğitim (train) ve %20 test olacak şekilde ikiye ayırdım. Böylece modelin görmediği veriler üzerindeki başarısını ölçebildim.
 ---
 
-## 3. Bölüm 1: Harcama Miktarını Tahmin Etme (Regresyon)
+## 3. Harcama Miktarını Tahmin Etme (Regresyon)
 
 Projenin ilk aşamasında, müşterilerin özelliklerine bakarak **"Ne kadar harcama yapacak?"** (`Purchase Amount`) sorusuna yanıt aradım.
 
@@ -55,17 +55,17 @@ Her iki model de eğitildikten sonra elde edilen sonuçlar beklentinin altında 
 
 ### Neden Başarısız Oldu?
 Elde edilen **negatif R² skorları**, modellerin veri setindeki varyansı açıklayamadığını gösterdi. Yapılan analiz sonucunda şu gerçek ortaya çıktı:
-> *Müşterinin yaşı, cinsiyeti veya puanı ile harcama miktarı arasında anlamlı bir ilişki bulunmamaktadır.*
+> Müşterinin yaşı, cinsiyeti veya puanı ile harcama miktarı arasında anlamlı bir ilişki bulunmamaktadır.
 
 Bu nedenle, veri seti **sayısal tahmin (Regresyon)** yapmak için uygun değildir. Bu noktada strateji değişikliğine gidilmiştir.
 
 ---
 
-## 5. Bölüm 2: Strateji Değişikliği ve Sınıflandırma (Abonelik Tahmini)
+## 5. Strateji Değişikliği ve Sınıflandırma (Abonelik Tahmini)
 
 Regresyon modellerinin başarısızlığı üzerine, problemin tanımını değiştirdim. Hedef değişkeni **`Subscription Status` (Abonelik Durumu)** olarak belirleyip projeyi bir **Sınıflandırma (Classification)** problemine dönüştürdüm.
 
-**Yeni Hedef:** Müşterinin özelliklerine bakarak "Abone mi?" (Yes/1) yoksa "Değil mi?" (No/0) sorusuna yanıt bulmak.
+**Yeni Hedef:** Müşterinin özelliklerine bakarak "Abone mi?" yoksa "Değil mi?" sorusuna yanıt bulmak.
 
 **Kullanılan Modeller:**
 1.  **Logistic Regression**
@@ -81,13 +81,13 @@ Sınıflandırma modelleri, regresyonun aksine oldukça başarılı sonuçlar ve
 * **Logistic Regression Doğruluğu:** %80.1
 * **Random Forest Classifier Doğruluğu:** %82.0
 
-En iyi performansı gösteren **Random Forest** modelinin detaylı analiz tablosu aşağıdadır:
+**Logistic Regression** modeli ve en iyi performansı gösteren **Random Forest** modelinin detaylı analiz tablosu aşağıdadır:
 
 ![Sınıflandırma Raporu Tablosu](/images/img5.png)
 
-### Tablo Yorumu:
+### Random Forest Tablo Yorumu:
 Tabloda dikkat çeken en önemli detay **Recall (Duyarlılık)** değeridir.
-* **Recall (Class 1 - Abone Olanlar): 0.91**
+* **Recall: 0.91**
 * **Anlamı:** Modelimiz, gerçekte abone olan müşterilerin **%91'ini** doğru tespit etmiştir. Yani model, potansiyel aboneleri gözden kaçırmama konusunda "uzmanlaşmıştır".
 * **Precision (0.63):** Model bazen abone olmayanları da abone gibi tahmin etse de, pazarlama stratejisi açısından aboneyi kaçırmamak daha önceliklidir.
 
@@ -105,8 +105,8 @@ Modelin başarısının arkasında hangi özelliklerin yattığını anlamak iç
 
 ### Analiz Sonucu:
 Grafikte görüldüğü üzere, bir müşterinin abone olup olmadığını belirleyen en kritik iki faktör:
-1.  **Discount Applied (İndirim Uygulanmış mı?)**
-2.  **Promo Code Used (Promosyon Kodu Kullanılmış mı?)**
+1.  **Promo Code Used (Promosyon Kodu Kullanılmış mı?)**
+2.  **Discount Applied (İndirim Uygulanmış mı?)**
 
 Yaş, cinsiyet veya harcama miktarı gibi özelliklerin etkisi daha sınırlı kalırken, şirketin sunduğu indirim ve kampanyaların abonelik üzerinde güçlü bir etkisi olduğu kanıtlanmıştır.
 
