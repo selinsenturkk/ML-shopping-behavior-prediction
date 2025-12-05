@@ -12,8 +12,8 @@ Bu proje, makine öğrenmesi tekniklerini kullanarak müşteri verilerinden anla
 ---
 
 ## 2. Veri Seti ve Ön Hazırlık
-Kullanılan veri seti: `shopping_behavior_updated.csv` 
-Kaggle linki için [buraya](https://www.kaggle.com/datasets/ayeshasiddiqa123/customer-shopping-behavior-dataset) tıklayınız.
+Kullanılan veri seti: `shopping_behavior_updated.csv`   
+Kaggle linki için [buraya](https://www.kaggle.com/datasets/ayeshasiddiqa123/customer-shopping-behavior-dataset) tıklayınız.  
 Veri setinde müşterilerin yaşı, cinsiyeti, satın aldıkları ürün kategorileri, lokasyonları ve harcama alışkanlıkları gibi bilgiler yer almaktadır.
 ### Veri Setinden Örnekler
 İlk 5 satır aşağıdadır:
@@ -51,7 +51,7 @@ Her iki model de eğitildikten sonra elde edilen sonuçlar beklentinin altında 
 | Linear Regression | -0.028 | 23.98 |
 | Random Forest | -0.032 | 24.04 |
 
-![lineer Regresyon Grafigi](/images/img2.png)  ![Random forest grafigi](img3.png)
+![lineer Regresyon Grafigi](/images/img2.png) ![Random forest grafigi](/images/img3.png)
 
 ### Neden Başarısız Oldu?
 Elde edilen **negatif R² skorları**, modellerin veri setindeki varyansı açıklayamadığını gösterdi. Yapılan analiz sonucunda şu gerçek ortaya çıktı:
